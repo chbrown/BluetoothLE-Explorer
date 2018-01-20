@@ -1,0 +1,16 @@
+{
+  "name": "bluetoothle-explorer",
+  "description": "Command line explorer for Bluetooth Low Energy (BLE) devices",
+  "keywords": [
+    "bluetooth",
+    "ble"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/chbrown/BluetoothLE-Explorer",
+  "repository": "git://github.com/chbrown/BluetoothLE-Explorer.git",
+  "author": "Christopher Brown <io@henrian.com>",
+  "license": "MIT",
+  "dependencies": {
+    "noble": "^1.8.1"
+  }
+}
