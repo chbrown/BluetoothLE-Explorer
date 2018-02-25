@@ -1,6 +1,6 @@
 {
   "name": "bluetoothle-explorer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Command line explorer for Bluetooth Low Energy (BLE) devices",
   "keywords": [
     "bluetooth",
