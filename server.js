@@ -166,9 +166,21 @@ function initializeNoble(serviceUUIDs=[]) {
   })
 }
 
+/**
+Check the `BLE_SERVICES` environment variable for a ':'-separated list of service IDs;
+otherwise limit to devices with recognized services (those described in services.js).
+*/
+function loadServiceUUIDs() {
+  const {BLE_SERVICES} = process.env
+  if (BLE_SERVICES !== undefined) {
+    // ''.split(<anything>) always returns ['']; filter that out in that case
+    return BLE_SERVICES.split(':').filter(uuid => uuid)
+  }
+  return serviceDefinitions.map(serviceDefinition => serviceDefinition.uuid.toString(16))
+}
+
 function main() {
-  // limit to devices with known services
-  const serviceUUIDs = serviceDefinitions.map(serviceDefinition => serviceDefinition.uuid.toString(16))
+  const serviceUUIDs = loadServiceUUIDs()
   initializeNoble(serviceUUIDs)
 }
 
