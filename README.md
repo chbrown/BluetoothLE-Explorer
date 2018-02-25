@@ -1,5 +1,7 @@
 # BluetoothLE-Explorer
 
+[![latest version published to npm](https://badge.fury.io/js/bluetoothle-explorer.svg)](https://www.npmjs.com/package/bluetoothle-explorer)
+
 `bluetoothle-explorer` is a Node.js package for logging information about available Bluetooth Low Energy (BLE) devices, and the data they generate, at the command line.
 
 It is a tool for debugging / exploration, building on top of the `noble` library, and not intended for consumption from other applications.
