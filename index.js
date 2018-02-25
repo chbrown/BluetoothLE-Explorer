@@ -5,10 +5,12 @@ function BufferToJSON() {
 }
 Buffer.prototype.toJSON = BufferToJSON
 
-const jsonSpace = 0 // for compact printing
-// const jsonSpace = 2 // for pretty printing
+/** Drop Object entries (key-value pairs) if the key exists in this set. */
+const jsonBlacklistKeys = new Set(['_noble'])
+/** Use 0 for compact printing, 2 for pretty printing. */
+const jsonSpace = 0
 function jsonReplacer(key, value) {
-  if (key == '_noble') {
+  if (jsonBlacklistKeys.has(key)) {
     return undefined
   }
   // if (value === 'unknown') {
