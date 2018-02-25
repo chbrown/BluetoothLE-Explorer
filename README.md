@@ -12,6 +12,10 @@ It is a tool for debugging / exploration, building on top of the `noble` library
     npm install
     node server.js
 
+By default, that will limit discovery to devices advertising recognized service UUIDs (those listed in `services.js`).
+To specify a different filter, set the `BLE_SERVICES` environment variable to a `:`-separated list of UUIDs.
+E.g., `BLE_SERVICES=180a:1821 node server.js` will only connect to devices that advertise the "[Device Information](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml)" or "[Indoor Positioning](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.indoor_positioning.xml)" services.
+Use an empty value, e.g., `BLE_SERVICES= node server.js`, to discover _all_ BLE devices.
 
 ### Notes on Bluetooth LE / the interface provided by `noble`
 
